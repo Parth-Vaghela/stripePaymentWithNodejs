@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Payment</title>
+</head>
+<body>
+  <form action="/charge" method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js"
+      class="stripe-button"
+      data-key="<%= stripePublishableKey %>"
+      data-amount="99"
+      data-name="Beem Purchase"
+      data-description="beem"
+      data-image="/img/tour.jpeg"
+      data-locale="auto"
+    >
+    </script>
+    <script>
+      document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+    </script>
+    <center>
+      <button style="margin: 50px;" type="submit" class="btn btn-success btn-lg"> Purchase </button>
+    </center>
+  </form>   
+</body>
+</html>
